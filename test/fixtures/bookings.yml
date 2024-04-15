@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  checkin: 2024-04-15
+  checkout: 2024-04-15
+  traveller: one
+  experience: one
+
+two:
+  checkin: 2024-04-15
+  checkout: 2024-04-15
+  traveller: two
+  experience: two
