@@ -1,0 +1,9 @@
+<h1><%= @experience.title %></h1>
+
+<div>
+  <p><strong>The experience:</strong> <%= @experience.description %></p>
+  <p><strong>This experience is hosted by </strong> <%= @experience.host.first_name %>.</p>
+
+</div>
+
+<%= link_to "Back", experiences_path %>

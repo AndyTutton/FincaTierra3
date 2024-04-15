@@ -1,0 +1,9 @@
+<h1>Experiences</h1>
+
+<ul>
+  <% @experiences.each do |experience| %>
+    <li>
+      <%= link_to experience.title, experience_path(experience) %>
+    </li>
+  <% end %>
+</ul>
