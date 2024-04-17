@@ -1,7 +1,7 @@
 <nav>
   <% if host_signed_in? %>
     <%= link_to 'Edit profile', edit_host_registration_path %>
-    <%= link_to 'Logout', destroy_host_session_path, method: :delete %>
+    <%= link_to 'Logout', destroy_host_session_path(@current_host), method: :delete %>
     <%= link_to 'Manage Experiences', experiences_path %>
   <% elsif traveller_signed_in? %>
     <%= link_to 'Edit profile', edit_traveller_registration_path %>

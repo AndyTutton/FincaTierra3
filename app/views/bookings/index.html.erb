@@ -1,0 +1,30 @@
+<!-- app/views/bookings/index.html.erb -->
+
+<h1>My Bookings</h1>
+
+<% if @bookings.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Booking ID</th>
+        <th>Experience</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <td><%= booking.id %></td>
+          <td><%= booking.experience.title %></td> <!-- Assuming each booking belongs to an experience -->
+          <td>
+            <%= link_to "View", booking_path(booking) %> |
+            <%= link_to "Edit", edit_booking_path(booking) %> |
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No bookings found.</p>
+<% end %>

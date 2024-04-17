@@ -1,0 +1,13 @@
+
+<h1>Booking Details</h1>
+
+<p><strong>Booking ID:</strong> <%= @booking.id %></p>
+<p><strong>Experience:</strong> <%= @booking.experience.title %></p>
+<p><strong>Check-in:</strong> <%= @booking.checkin %></p>
+<p><strong>Check-out:</strong> <%= @booking.checkout %></p>
+<p><strong>Guests:</strong> <%= @booking.traveller.first_name %> <%= @booking.traveller.last_name %></p>
+
+
+<%= link_to "Edit", edit_booking_path(@booking), class: "btn btn-primary" %>
+<%= link_to "Back", bookings_path, class: "btn btn-secondary" %>
+<%= link_to "Delete", booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" } %>

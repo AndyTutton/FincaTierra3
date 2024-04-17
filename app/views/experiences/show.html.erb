@@ -1,9 +1,8 @@
 <h1><%= @experience.title %></h1>
+<p><%= @experience.description %></p>
 
-<div>
-  <p><strong>The experience:</strong> <%= @experience.description %></p>
-  <p><strong>This experience is hosted by </strong> <%= @experience.host.first_name %>.</p>
-
-</div>
-
+<%= link_to "Edit", edit_experience_path(@experience) %>
+<%= link_to "Delete", @experience, method: :delete, data: { confirm: "Are you sure you want to delete this experience?" } %>
 <%= link_to "Back", experiences_path %>
+
+<%= link_to "Add New Experience", new_experience_path %>

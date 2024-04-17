@@ -1,0 +1,25 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="text-center">About Finca Tierra</h2>
+      <p>Finca Tierra is a platform for booking stays at a beautiful farm in the mountains of Costa Rica. We offer a variety of accommodations, from camping to luxury cabins, and a range of activities to make your stay unforgettable. Our farm is located in the mountains of Costa Rica, near the town of San Isidro de El General. We are surrounded by lush tropical rainforest, with stunning views of the Pacific Ocean and the Talamanca mountain range. Our farm is home to a variety of animals, including horses, cows, pigs, chickens, and dogs. We grow a variety of fruits and vegetables on the farm, including bananas, plantains, pineapples, papayas, and more. We also offer a range of activities for our guests to enjoy, including horseback riding, hiking, birdwatching, and more. Whether you're looking for a relaxing getaway or an adventure-filled vacation, Finca Tierra has something for everyone.</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="text-center">Our Accommodations</h2>
+      <p>We offer a variety of accommodations to suit every budget and preference. Our camping area is perfect for those who want to experience the great outdoors, with stunning views of the surrounding mountains and ocean. Our luxury cabins are perfect for those who want a more comfortable and private experience, with all the amenities of home. Our dormitory-style rooms are perfect for groups or solo travelers who want to meet new people and share their experiences. Whatever your preference, we have the perfect accommodation for you at Finca Tierra.</p>
+    </div>
+  </div>
+</div>
+
+<% @experiences.each do |experience| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= experience.title %></h5>
+      <p class="card-text"><%= experience.description %></p>
+      <!-- Link to the show page for this experience -->
+      <%= link_to "See details", experience_path(experience), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

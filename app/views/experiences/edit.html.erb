@@ -1,0 +1,12 @@
+
+<h1>Edit Experience</h1>
+
+<%= simple_form_for @experience do |form| %>
+  <%= form.input :title %>
+  <%= form.input :description %>
+
+  <div class="form-actions">
+    <%= form.button :submit, "Update Experience", class: "btn btn-primary" %>
+    <%= link_to "Cancel", experience_path(@experience), class: "btn btn-secondary" %>
+  </div>
+<% end %>

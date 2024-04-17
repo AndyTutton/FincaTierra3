@@ -1,0 +1,9 @@
+<h1>New Booking</h1>
+
+<%= simple_form_for @booking do |form| %>
+  <%= form.input :start_date, as: :date_picker %>
+  <%= form.input :end_date, as: :date_picker %>
+  <%= form.input :message, as: :text %>
+  <%= form.hidden_field :experience_id, value: @experience.id %>
+  <%= form.button :submit, class: "btn btn-primary" %>
+<% end %>

@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :hosts
   devise_for :travellers
+  devise_for :hosts
+
+  # devise_for :hosts, controllers: { sessions: 'hosts/sessions', registrations: 'hosts/registrations' }
+
+  # devise_for :travellers, controllers: { sessions: 'travellers/sessions', registrations: 'travellers/registrations' }
+
+
 
   devise_scope :host do
     get '/hosts/sign_out' => 'devise/sessions#destroy'
+    get 'profile', to: 'hosts/sessions#show'
+
   end
 
   devise_scope :traveller do
@@ -16,21 +24,19 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :booking
+  resources :bookings
 
-  resource :traveller, except: [:index] do
-    resources :booking, except: [:index]
-  end
+  resources :travellers
 
-
-  resources :experiences, only: [:show, :index]
+  resources :experiences
 
   # # Nested routes for hosts to manage experiences
-  resources :host, except: [:index] do
-    resources :experiences, only: [:new, :create, :edit, :update]
+  resources :hosts, except: [:index] do
+    resources :experiences, except: [:destroy]
   end
+
 
 
   # Defines the root path route ("/")
-  root to: "experiences#index"
+  root to: "pages#show"
 end
