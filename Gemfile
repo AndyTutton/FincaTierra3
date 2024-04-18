@@ -68,6 +68,8 @@ group :test do
   gem "selenium-webdriver"
 end
 
+gem 'bootstrap', '~> 5.0.0'
+
 
 gem 'devise'
 
