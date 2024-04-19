@@ -3,3 +3,10 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require popper
+//= require bootstrap-sprockets
+//= require bootstrap
+//= require_tree .
